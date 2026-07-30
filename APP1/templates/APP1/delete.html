@@ -1,0 +1,9 @@
+<h1>Are you sure...you want to delete {{forms.name}}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{forms.as_p}}
+    <input type="submit" value="yes">
+    <br>
+    <br>
+    <a href="{% url 'view' %}">No</a>
+</form>
