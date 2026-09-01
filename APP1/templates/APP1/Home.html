@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="color: blueviolet; text-align: center;">WELCOME TO MY HOME</h1>
-    <!-- {{abc}}
-    {% for i in abc %}
-    <p>{{i}}</p>
-    {% endfor %} -->
+{%extends 'APP1/base.html' %}
+{% block title %}<title>Home</title>{% endblock %}
+<!-- {% block ccs %}
+<style>
+a{
+    text-decoration:none
+}
+</style>
+{% endblock %} -->
+{% block content %}
+<h1 style="color: blueviolet; text-align: center;">WELCOME TO MY HOME</h1>
+    
     <a href="{% url 'about' %}">About</a><br><br>
     <a href="{% url 'view' %}">View</a><br><br>
     <a href="{% url 'reg'%}">Registration</a><br><br>
     <a href="{% url 'login' %}">Login</a>
-</body>
-</html>
+
+{% endblock %}

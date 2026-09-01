@@ -19,9 +19,12 @@
             <td>{{i.book.name}}</td>
             <td>{{i.book.price}}</td>
             <td>{{i.quantity}}</td>
+            
+            <td><a href="{% url 'buy' i.id %}">Buy</a></td>
         </tr>
         {% endfor %}
 
     </table>
+    <a href="{% url 'view' %}">View</a>
 </body>
 </html>

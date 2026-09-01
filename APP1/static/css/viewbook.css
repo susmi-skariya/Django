@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Table headings */
+th {
+    background: #2c3e50;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Table cells */
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* Hover effect */
+tr:hover td {
+    background: #f8f9ff;
+}
+
+/* Book image */
+td img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* No image text */
+td span {
+    color: #999;
+    font-style: italic;
+}
+
+/* Links inside table */
+td a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 2px;
+}
+
+/* Update */
+td a[href*="update"] {
+    background: #3498db;
+    color: white;
+}
+
+td a[href*="update"]:hover {
+    background: #2980b9;
+}
+
+/* Delete */
+td a[href*="delete"] {
+    background: #e74c3c;
+    color: white;
+}
+
+td a[href*="delete"]:hover {
+    background: #c0392b;
+}
+
+/* Cart */
+td a[href*="add"] {
+    background: #27ae60;
+    color: white;
+}
+
+td a[href*="add"]:hover {
+    background: #219150;
+}
+
+/* ADD button */
+a[href*="createbook"] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #8e44ad;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="createbook"]:hover {
+    background: #732d91;
+}
+
+/* View Cart button */
+a[href*="cart"] {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="cart"]:hover {
+    background: #d68910;
+}
+
+/* Logout */
+a[href*="logout"] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 22px;
+    background: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="logout"]:hover {
+    background: #1f2d3a;
+}
+
+
+

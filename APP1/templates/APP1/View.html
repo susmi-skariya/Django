@@ -4,19 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
+<style>
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+/* table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    box-shadow: none;
+} */
+
+tbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+tr {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+td img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+}
+
+td {
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+}
+
+
+td a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 2px;
+}
+
+
+td a[href*="update"] {
+    background: #3498db;
+    color: white;
+}
+
+td a[href*="update"]:hover {
+    background: #2980b9;
+}
+
+
+td a[href*="delete"] {
+    background: #e74c3c;
+    color: white;
+}
+
+td a[href*="delete"]:hover {
+    background: #c0392b;
+}
+
+
+td a[href*="add"] {
+    background: #27ae60;
+    color: white;
+}
+
+td a[href*="add"]:hover {
+    background: #219150;
+}
+
+
+a[href*="createbook"] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #8e44ad;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="createbook"]:hover {
+    background: #732d91;
+}
+
+
+a[href*="cart"] {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="cart"]:hover {
+    background: #d68910;
+}
+
+
+a[href*="logout"] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 22px;
+    background: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a[href*="logout"]:hover {
+    background: #1f2d3a;
+}
+
+
+</style>
 <body>
     <H1>View Table</H1>
     <h2>WELCOME {{request.user.username}}</h2>
     <table border="1">
-        <tr>
+        <!-- <tr>
             <th>Cover</th>
             <th>Name</th>
             <th>Author</th>
             <th>Price</th>
             <th>Description</th>
             <th>Update</th>
-        </tr>
+        </tr> -->
         
         {% for i in table %}
         <tr>
@@ -31,14 +170,17 @@
             <td>{{i.author}}</td>
             <td>{{i.price}}</td>
             <td>{{i.description}}</td>
-            <td><a href="{% url 'update' i.id %}">Update</a><br><br>
-            <a href="{% url 'delete' i.id %}">Delete</a><br><br>
-        <a href="{% url 'add' i.id %}">Cart➕</a></td>
+            <td style="display: flex; gap: 5px; align-items: center;">
+                <a href="{% url 'update' i.id %}">Update</a>
+            <a href="{% url 'delete' i.id %}">Delete</a>
+        <a href="{% url 'add' i.id %}">Cart</a></td>
         </tr>
         {% endfor %}
 
-        <a href="{% url 'createbook' %}">ADD</a><br><br>
+        <div style="display: flex; gap: 5px; align-items: center;">
+        <a href="{% url 'createbook' %}">ADD</a>
         <a href="{% url 'cart' %}">View Cart🛒</a>
+        </div>
     </table>
     <a href="{% url 'logout'%}">Logout</a>
 </body>
